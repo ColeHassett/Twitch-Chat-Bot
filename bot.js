@@ -1,7 +1,7 @@
 const tmi = require('tmi.js');
 const fs = require('fs');
 
-Define configuration options
+// Define configuration options
 const opts = {
     identity: {
         username: env.BOT_USERNAME,

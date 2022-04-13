@@ -1,0 +1,11 @@
+{
+  "name": "twitch-chat-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "nodemon bot.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

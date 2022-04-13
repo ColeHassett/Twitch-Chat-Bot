@@ -4,11 +4,11 @@ const fs = require('fs');
 // Define configuration options
 const opts = {
     identity: {
-        username: env.BOT_USERNAME,
-        password: env.OAUTH_TOKEN
+        username: process.env.BOT_USERNAME,
+        password: process.env.OAUTH_TOKEN
     },
     channels: [
-        env.CHANNEL_NAME
+        process.env.CHANNEL_NAME
     ]
 };
 

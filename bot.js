@@ -20,8 +20,6 @@ client.connect();
 
 var sc;
 
-//test
-
 // Called every time a message comes in
 function onMessageHandler (target, context, msg, self) {
     if (self) { return; } // Ignore messages from the bot
@@ -31,17 +29,14 @@ function onMessageHandler (target, context, msg, self) {
     var cmd = message[0];
 
     // Check for SC Emotes
-    if (message.some((el) => el === '-20' || el === '+20')) {
-        message.forEach(word => {
-            if (word === '+20') {
-                sc += 20;
-            }
-            else if (word === '-20') {
-                sc -= 20;
-            }
-        });
-        updateSC();
-    }
+    var doUpdate = false;
+    message.forEach(word => {
+        if (word === '+20' || word === '-20') {
+            sc += parseInt(word);
+            doUpdate = true;
+        }
+    });
+    doUpdate ? updateSC() : null;
 
     // Report SC
     if (message[0] === '!sc') {

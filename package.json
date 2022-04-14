@@ -4,8 +4,13 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
+    "start": "node bot.js",
     "test": "nodemon bot.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "tmi.js": "^1.8.5"
+  }
 }

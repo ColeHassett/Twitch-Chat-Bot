@@ -2,15 +2,7 @@ const tmi = require('tmi.js');
 const fs = require('fs');
 
 // Define configuration options
-const opts = {
-    identity: {
-        username: process.env.BOT_USERNAME,
-        password: process.env.OAUTH_TOKEN
-    },
-    channels: [
-        process.env.CHANNEL_NAME
-    ]
-};
+const opts = require('./config');
 
 // Create a client with our options
 const client = new tmi.client(opts);

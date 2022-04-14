@@ -6,7 +6,7 @@ const opts = require('./config');
 
 // HTTP server to keep Glitch from sleeping
 const keepalive = require('./keepalive');
-keepalive.start();
+keepalive.start(opts.port);
 
 // Create a client with our options
 const client = new tmi.client(opts);

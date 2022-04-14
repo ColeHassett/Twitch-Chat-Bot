@@ -7,3 +7,4 @@ module.exports = {
         process.env.CHANNEL_NAME
     ]
 };
+module.exports.port = process.env.PORT;

@@ -20,23 +20,21 @@ var sc;
 function onMessageHandler (target, context, msg, self) {
     if (self) { return; } // Ignore messages from the bot
   
+    // Break message into array and establish first element as the command
     var message = msg.split(" ");
     var cmd = message[0];
 
     // Check for SC Emotes
-    if (message.includes('-20')) {
+    if (message.some((el) => el === '-20' || el === '+20')) {
         message.forEach(word => {
             if (word === '+20') {
-                updateSC(0);
+                sc += 20;
+            }
+            else if (word === '-20') {
+                sc -= 20;
             }
         });
-    }
-    else if (message.includes('+20')) {
-        message.forEach(word => {
-            if (word === '+20') {
-                updateSC(1);
-            }
-        });
+        updateSC();
     }
 
     // Report SC
@@ -45,9 +43,7 @@ function onMessageHandler (target, context, msg, self) {
     }
 }
 
-function updateSC(bool) {
-    bool > 0 ? sc += 20 : sc -= 20;
-
+function updateSC() {
     fs.writeFile('sc.txt', sc, (err) => {
         if (err) {
             return console.log("File Write Error:\n", err);

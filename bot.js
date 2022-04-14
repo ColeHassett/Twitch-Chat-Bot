@@ -4,6 +4,10 @@ const fs = require('fs');
 // Define configuration options
 const opts = require('./config');
 
+// HTTP server to keep Glitch from sleeping
+const keepalive = require('./keepalive');
+keepalive.start();
+
 // Create a client with our options
 const client = new tmi.client(opts);
 

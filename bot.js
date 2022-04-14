@@ -20,6 +20,8 @@ client.connect();
 
 var sc;
 
+//test
+
 // Called every time a message comes in
 function onMessageHandler (target, context, msg, self) {
     if (self) { return; } // Ignore messages from the bot

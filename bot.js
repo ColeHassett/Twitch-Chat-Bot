@@ -45,7 +45,8 @@ function onMessageHandler (target, context, msg, self) {
 }
 
 function updateSC() {
-    fs.writeFile('sc.txt', sc, (err) => {
+    let stringSC = toString(sc);
+    fs.writeFile('sc.txt', stringSC, (err) => {
         if (err) {
             return console.log("File Write Error:\n", err);
         }
